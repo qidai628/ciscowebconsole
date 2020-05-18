@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--{% load i18n %}-->
+    <!-- start: Meta -->
+    <meta charset="utf-8">
+    <title>Serial number console</title>
+    <meta name="description" content="FutureDial">
+    <meta name="author" content="fd">
+    <meta name="keyword" content="Cisco web console">
+    <!-- end: Meta -->
+
+    <!-- start: Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- end: Mobile Specific -->
+
+    <!-- start: CSS -->
+    <link id="bootstrap" href="static/css/bootstrap.css" rel="stylesheet">
+
+    <link href="static/css/style-responsive.css" rel="stylesheet">
+    <link href="static/css/style.css?v=1578041025" rel="stylesheet">
+    <link href="static/css/navbar-custom.css?v=1" rel="stylesheet">
+    <link href="static/css/breadcrumbs.css" rel="stylesheet">
+
+    <!-- end: CSS -->
+
+    <!-- start: Favicon -->
+   <link rel="shortcut icon" href="static/images/favicon.ico">
+    <!-- end: Favicon -->
+</head>
+<body>
+
+<!-- start: Header -->
+<div class="navbar">
+    <div class="navbar" style="background:#525152;height: 85px;margin-top: 0px;min-width: 980px;text-align: center;">
+
+        <div class="logo"  style="display:inline;text-align:left; border:0px solid red;">
+            <img style="padding-top:25px; margin: 0;float: left; padding-left: 35px; width: 200px; height: 20px;margin-top: 5px; list-style: none; border: 0;" src="static/images/FD_Logo.png" />
+        </div>
+
+        <div id="user" style="display:inline; border:0px solid #000; text-align:right;height: 50px; float: right; margin-top: 0px; padding-right: 35px;">
+            <div style="display:inline-block; border:0px solid white; color:#ffffff; width:450px; height:32px;line-height:32px; margin-top:25px; font-size:200%;float: left;">
+                Serial Number <span style="font-size:45%; border:0px solid white;">Management Console</span>
+            </div>
+
+
+            <div style="display:inline-block; width:1px; height:24px;margin-bottom:7px; margin-left:40px; margin-right:40px;"></div>
+
+            <div id="user-inner" style="display:inline-block;text-align: right; border:0px solid white; height: 32px; margin-top:25px;float: right;">
+                <div class="user-name" style="display:inline;height: 32px;float: left;">
+                    <a style="color: #FFFFFF;font-size: 10px;line-height: 32px;">username</a>
+                </div>
+                <div style="display:inline;">
+                    <img id="logout" onmouseout="this.src='static/images/logout.svg'" onmouseover="this.src='static/images/logout.svg'"
+                         onclick="javascript:location.href='/logout/'" src="static/images/logout.svg"
+                         style="cursor:pointer;margin-top:8px; margin-left: 10px; width:14px;"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+    <!--{% block main %} {% endblock %}-->
+        <!-- start: top tab -->
+		<div class="container-fluid" style="padding-left:0px; padding-right:0px;">
+            <!--{% block tabbar %}-->
+			<div class="row-fluid">
+
+                <div class="tabnav" style="background:#fff;">
+                    <!--{% block topmenu %}-->
+                    <ul>
+                        <li><a class="hideitem"></a></li>
+                    </ul>
+                    <!--{% endblock %}-->
+				</div>
+			</div>
+			<!--{% endblock %}-->
+		</div>
+        <!-- end: top tab -->
+
+		<div class="container-fluid" style="padding-left:0;padding-right:0;margin-top:40px;">
+            <div class="row-fluid">
+                <div style="width:90%; margin-left:5%;">
+                    <div class="span12" id="sel-company" style="display:inline-block; height:189px;padding-top:66px;border:1px solid green;">
+                        <div style="height:57px;line-height:57px;font-size:48px;">
+                            FutureDial Nanjing
+                        </div>
+                    </div>
+                    <div class="span12" style="margin-left:0;background:#E7E3E7;"> 							                      
+                            <div id="sel-site" style="width:100%;height:93px;border:1px solid yellow;">
+								<div style="height:35px;margin-top:29px;">
+									<div style="width:45px;display:inline-block;float:left;">
+									</div>						
+									<div style="width:51px;display:inline-block;float:left;margin-left:10px;">
+										<img src="static/images/company_big.svg">
+									</div> 
+									<div style="margin-left:60px;display:inline-block;line-height:35px;font-size:29px;">
+										FutureDial Nanjing
+									</div>	
+									<div id="err-msg" style="display:inline-block;float:right;margin-right:23px;color:red;line-height:35px;">
+										Uploaded CSV format is invalid!
+									</div>
+								</div>
+                            </div>
+                            
+                            <div style="width:100%;height:181px;border:1px solid yellow;">
+								<div style="width:45px;float:left;display:inline-block;">
+								</div>
+                                <div style="width:61px;display:inline-block;float:left;margin-top:58px;">
+                                    <img src="static/images/csv_file.svg">
+                                </div>
+                                <div style="margin-left:60px;display:inline-block;">
+                                    <div style="display: inline-block;height:54px;margin-top:21px;">
+                                        <span style="font-size:20px;line-height: 54px;">
+                                            Add Serial Number into White List
+                                        </span>
+                                        <button style="margin-left:50px;width:150px;height:54px;border:0;margin-bottom:8px;background: url('static/images/add_button.svg') no-repeat;" onclick="alert('add')"></button>
+                                    </div>
+                                    <ul style="font-size:12px;margin-left:16px;margin-top:22px;">
+                                        <li>Upload file to add Serial Number.</li>
+                                        <li>File format is CSV, while each line contains a serial number.</li>
+                                        <li>Download a CSV sample file<button style="margin-left:10px;width:24px;height:24px;border:0;background: url('static/images/download_small.svg') no-repeat;" onclick="alert('sample')"></button></li>                              
+                                    </ul>
+                                </div>
+                                <div style="width:45%;height:100%;float:right; display:inline-block;background-color: #848284;">
+                                    <div style="height:54px;margin-left:10px;margin-top:21px;">
+                                        <span style="font-size:20px;color: white;line-height: 54px;">
+                                            Remove Serial Number from White List
+                                        </span>
+                                        <button style="float:right;margin-left:10px;margin-right:23px;width:150px;height:54px;border:0;background: url('static/images/remove_button.svg') no-repeat;" onclick="alert('remove')"></button>
+                                    </div>
+                                    <div style="margin-left:10px; margin-right:70px;margin-top:30px; font-size: 12px; color:white">
+                                        Upload CSV file to remove Serial Number, CSV file format is same as the CSV file with Serial Number added.
+                                    </div>
+
+                                </div>                              
+                            </div>
+                    </div>
+                    <div class="span12" style="margin-left:0;height:109px;"> 
+                        <div style="float:right;margin-right:23px;margin-top:35px;">
+                            <button style="width:47px;height:47px;border:0;background: url('static/images/button_refresh.svg') no-repeat;" onclick="alert('refresh')"></button>
+                            <button style="width:33px;height:35px;border:0;background: url('static/images/button_filter.svg') no-repeat;" onclick="alert('filter')"></button>
+                        </div>
+                    
+                    </div>
+                </div>
+                    <!--{% block content %}{% endblock %}-->
+             </div>
+                <!-- end: Content -->
+            <!--/fluid-row-->
+        </div>    
+
+    <script src="static/js/jquery-1.9.1.min.js"></script>
+    <script src="static/js/bootstrap.js"></script>
+
+    <script src="static/js/jquery.noty.js"></script>
+
+    <script src="static/js/jquery.cookie.js"></script>
+    <script src="static/js/mustache.js"></script>
+
+
+    <!--{% block css_js %}-->
+        <!-- start: JavaScript-->
+<style type="text/css">
+        div {
+            border:1px solid blue;
+        }
+        button:focus {
+        outline: 0!important;
+    }
+</style>
+        <!-- end: JavaScript-->
+    <!--{% endblock %}-->
+</body>
+</html>
